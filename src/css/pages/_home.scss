@@ -1,0 +1,100 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-fixe {
+    position: fixed;
+    z-index: -1;
+    background: url(../img/wood-bg.jpg) center/cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash {
+    position: fixed;
+    z-index: 1;
+    width: 30vw;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        color: white;
+        text-transform: uppercase;
+        font-family: 'Coustard', serif;
+        font-size: 5rem;
+        text-align: center;
+        line-height: 15rem;
+        cursor: grabbing;
+    }
+    .bell {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(10deg);
+        width: 150px;
+        height: 150px;
+        background: url(../img/bell.png) center/cover;
+        filter: drop-shadow(0 .1rem .4rem rgba(0, 0, 0, 1));
+        cursor: pointer;
+    }
+}
+
+.disk-pos {
+    position: absolute;
+    z-index: 2;
+    width: 200vmin;
+    height: 200vmin;
+    &.appetizer-disk {
+        transform: translate(-75%, -75%);
+    }
+    &.drink-disk {
+        transform: translate(66%, -75%);
+    }
+    &.food-disk {
+        transform: translate(-75%, 25%);
+    }
+    &.dessert-disk {
+        transform: translate(66%, 25%);
+    }
+    .disk {
+        width: 100%;
+        height: 100%;
+        transform: rotate(0deg);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        ;
+        .img-test {
+            width: 50%;
+            height: 50%;
+            overflow: hidden;
+            // border: 3px dotted pink;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                padding: 10px;
+                // padding: 5px 50px 50px 5px;
+                filter: drop-shadow(0 0 1rem rgba(0, 0, 0, .7))
+            }
+            &:nth-of-type(2) {
+                transform: rotate(90deg);
+            }
+            &:nth-of-type(3) {
+                transform: rotate(270deg);
+            }
+            &:nth-of-type(4) {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
